@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFakeGuardian | Hybrid CNN-ResNet Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bgCanvas"></canvas>
+    <div class="bg-orbs">
+        <div class="bg-orb orb-a"></div>
+        <div class="bg-orb orb-b"></div>
+        <div class="bg-orb orb-c"></div>
+    </div>
+
+    <!-- LOGIN OVERLAY -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to DeepFakeGuardian</p>
+                </div>
+                
+                <div class="login-tabs">
+                    <button class="login-tab active" data-tab="signin">Sign In</button>
+                    <button class="login-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <form class="login-form active" id="signinForm">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" id="signinEmail" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="signinPassword" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me"><input type="checkbox"> Remember me</label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn-login">
+                        <span>Sign In</span><i class="fas fa-arrow-right"></i>
+                    </button>
+                    <div class="divider"><span>or continue with</span></div>
+                    <div class="social-login">
+                        <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                        <button type="button" class="social-btn"><i class="fab fa-github"></i></button>
+                        <button type="button" class="social-btn"><i class="fab fa-microsoft"></i></button>
+                    </div>
+                </form>
+
+                <form class="login-form" id="signupForm">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" id="signupName" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" id="signupEmail" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="Phone Number" id="signupPhone">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Create Password" id="signupPassword" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" id="signupConfirm" required>
+                    </div>
+                    <button type="submit" class="btn-login">
+                        <span>Create Account</span><i class="fas fa-user-plus"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="login-decoration">
+                <div class="decoration-content">
+                    <h3>DeepFakeGuardian</h3>
+                    <p>Hybrid CNN-ResNet Detection System</p>
+                    <div class="decoration-features">
+                        <div class="dec-feat"><i class="fas fa-check-circle"></i> Real-time Detection</div>
+                        <div class="dec-feat"><i class="fas fa-check-circle"></i> 99.7% Accuracy</div>
+                        <div class="dec-feat"><i class="fas fa-check-circle"></i> Secure Platform</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APPLICATION -->
+    <div class="app-wrapper" id="appWrapper" style="display:none;">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-container">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="brand-info">
+                        <span class="brand-name">DeepFake<span class="text-gradient">Guardian</span></span>
+                        <span class="brand-subtitle">HYBRID CNN-RESNET</span>
+                    </div>
+                </div>
+
+                <nav class="navbar" id="navbar">
+                    <a class="nav-link active" data-page="home" onclick="navigatePage('home')">Home</a>
+                    <a class="nav-link" data-page="image" onclick="navigatePage('image')">Image Detection</a>
+                    <a class="nav-link" data-page="video" onclick="navigatePage('video')">Video Detection</a>
+                    <a class="nav-link" data-page="settings" onclick="navigatePage('settings')">Settings</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="system-status">
+                        <span class="status-dot"></span>
+                        <span>System Active & Online</span>
+                    </div>
+                    <button class="icon-btn" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" onclick="toggleProfileMenu()">
+                            <div class="profile-avatar" id="profileAvatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </button>
+                        <div class="profile-menu" id="profileMenu">
+                            <div class="profile-info">
+                                <div class="profile-avatar-lg" id="profileAvatarLarge">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <strong id="profileName">User</strong>
+                                    <span id="profileEmail">user@email.com</span>
+                                </div>
+                            </div>
+                            <div class="profile-links">
+                                <a href="#" onclick="navigatePage('settings')"><i class="fas fa-cog"></i> Settings</a>
+                                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="icon-btn menu-toggle" onclick="toggleMobileNav()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- HOME PAGE -->
+            <section class="page active" id="page-home">
+                <div class="home-container">
+                    <div class="home-content">
+                        <div class="status-badge">
+                            <span class="badge-dot"></span>
+                            <span>System Active & Online</span>
+                        </div>
+                        
+                        <h1 class="main-title">
+                            Advanced <span class="text-gradient">DeepFake</span><br>Detection Platform
+                        </h1>
+                        
+                        <p class="main-description">
+                            Enterprise-grade detection system powered by hybrid CNN and 
+                            ResNet-50 architecture. Identify manipulated media with laboratory 
+                            precision.
+                        </p>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-primary" onclick="navigatePage('image')">
+                                Analyze Image
+                            </button>
+                            <button class="btn-secondary" onclick="navigatePage('video')">
+                                Analyze Video
+                            </button>
+                        </div>
+                        
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-ring">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+                                        <circle cx="60" cy="60" r="52" class="ring-fill" id="ring1"/>
+                                    </svg>
+                                    <span class="ring-value">99.7%</span>
+                                </div>
+                                <span class="stat-label">ACCURACY</span>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-ring">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+                                        <circle cx="60" cy="60" r="52" class="ring-fill" id="ring2"/>
+                                    </svg>
+                                    <span class="ring-value">0.3s</span>
+                                </div>
+                                <span class="stat-label">PROCESSING</span>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-ring">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+                                        <circle cx="60" cy="60" r="52" class="ring-fill" id="ring3"/>
+                                    </svg>
+                                    <span class="ring-value">97.5%</span>
+                                </div>
+                                <span class="stat-label">PRECISION</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="home-visual">
+                        <div class="scanner-frame">
+                            <div class="scanner-corners">
+                                <span class="corner tl"></span><span class="corner tr"></span>
+                                <span class="corner bl"></span><span class="corner br"></span>
+                            </div>
+                            <div class="scanner-laser"></div>
+                            <div class="scanner-grid"></div>
+                            <div class="scanner-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IMAGE DETECTION PAGE -->
+            <section class="page" id="page-image">
+                <div class="detect-container">
+                    <h2 class="section-title">Image <span class="text-gradient">Detection</span></h2>
+                    <p class="section-desc">Upload an image to check for AI manipulation or deepfake content</p>
+
+                    <div class="upload-area" id="imgUploadArea">
+                        <input type="file" id="imgInput" hidden accept="image/*" onchange="handleImageFile(event)">
+                        <div class="upload-zone" onclick="document.getElementById('imgInput').click()">
+                            <div class="upload-visual">
+                                <i class="fas fa-cloud-upload-alt floating-icon"></i>
+                                <div class="upload-rings">
+                                    <span class="u-ring r1"></span><span class="u-ring r2"></span><span class="u-ring r3"></span>
+                                </div>
+                            </div>
+                            <h3>Upload Image for Analysis</h3>
+                            <p>JPG, PNG, WEBP - Processed at 128×128×3</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-panel" id="imgPreview" style="display:none;">
+                        <div class="preview-header">
+                            <h4>Image Preview</h4>
+                            <button class="btn-close" onclick="resetImage()"><i class="fas fa-xmark"></i></button>
+                        </div>
+                        <img id="imgPreviewSrc" src="" alt="Preview">
+                        <div class="preview-info">
+                            <span id="imgName"></span>
+                            <span id="imgSize"></span>
+                        </div>
+                        <button class="btn-primary full-width" onclick="runImageAnalysis()">
+                            <i class="fas fa-microscope"></i> Run Analysis
+                        </button>
+                    </div>
+
+                    <div id="imgResults" style="display:none;"></div>
+                </div>
+            </section>
+
+            <!-- VIDEO DETECTION PAGE -->
+            <section class="page" id="page-video">
+                <div class="detect-container">
+                    <h2 class="section-title">Video <span class="text-gradient">Detection</span></h2>
+                    <p class="section-desc">Upload a video to detect deepfake and temporal manipulation</p>
+
+                    <div class="upload-area" id="vidUploadArea">
+                        <input type="file" id="vidInput" hidden accept="video/*" onchange="handleVideoFile(event)">
+                        <div class="upload-zone" onclick="document.getElementById('vidInput').click()">
+                            <div class="upload-visual">
+                                <i class="fas fa-cloud-upload-alt floating-icon"></i>
+                                <div class="upload-rings">
+                                    <span class="u-ring r1"></span><span class="u-ring r2"></span><span class="u-ring r3"></span>
+                                </div>
+                            </div>
+                            <h3>Upload Video for Analysis</h3>
+                            <p>MP4, AVI, MOV - Frame extraction at 128×128</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-panel" id="vidPreview" style="display:none;">
+                        <div class="preview-header">
+                            <h4>Video Preview</h4>
+                            <button class="btn-close" onclick="resetVideo()"><i class="fas fa-xmark"></i></button>
+                        </div>
+                        <video id="vidPreviewSrc" controls></video>
+                        <div class="preview-info">
+                            <span id="vidName"></span>
+                            <span id="vidSize"></span>
+                        </div>
+                        <button class="btn-primary full-width" onclick="runVideoAnalysis()">
+                            <i class="fas fa-microscope"></i> Run Analysis
+                        </button>
+                    </div>
+
+                    <div id="vidResults" style="display:none;"></div>
+                </div>
+            </section>
+
+            <!-- SETTINGS PAGE -->
+            <section class="page" id="page-settings">
+                <div class="detect-container">
+                    <h2 class="section-title"><span class="text-gradient">Settings</span></h2>
+                    
+                    <div class="settings-grid">
+                        <div class="setting-card">
+                            <h3><i class="fas fa-user-circle"></i> Profile</h3>
+                            <div class="profile-section">
+                                <div class="profile-avatar-xl" id="settingsAvatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-details">
+                                    <h4 id="settingsName">User Name</h4>
+                                    <p id="settingsEmail">user@email.com</p>
+                                    <button class="btn-secondary" onclick="logout()">
+                                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3><i class="fas fa-palette"></i> Appearance</h3>
+                            <div class="set-row">
+                                <span>Dark Mode</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="darkSwitch" onchange="toggleTheme()" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3><i class="fas fa-cogs"></i> Detection Settings</h3>
+                            <div class="set-row">
+                                <span>Sensitivity</span>
+                                <select class="set-select" id="thresholdSelect">
+                                    <option value="0.3">Conservative</option>
+                                    <option value="0.5" selected>Balanced</option>
+                                    <option value="0.7">Strict</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3><i class="fas fa-info-circle"></i> Model Information</h3>
+                            <div class="info-list">
+                                <p><strong>Architecture:</strong> Hybrid CNN + ResNet-50</p>
+                                <p><strong>Input Shape:</strong> 128 × 128 × 3</p>
+                                <p><strong>Framework:</strong> TensorFlow</p>
+                                <p><strong>Training Accuracy:</strong> 99.7%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="f-col">
+                        <h4><i class="fas fa-shield-virus"></i> DeepFakeGuardian</h4>
+                        <p>Advanced deepfake detection powered by hybrid CNN-ResNet architecture.</p>
+                    </div>
+                    <div class="f-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a onclick="navigatePage('home')">Home</a></li>
+                            <li><a onclick="navigatePage('image')">Image Detection</a></li>
+                            <li><a onclick="navigatePage('video')">Video Detection</a></li>
+                        </ul>
+                    </div>
+                    <div class="f-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a>Documentation</a></li>
+                            <li><a>Research Paper</a></li>
+                            <li><a>GitHub</a></li>
+                        </ul>
+                    </div>
+                    <div class="f-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> support@deepfakeguardian.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 DeepFakeGuardian. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- REPORT MODAL -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <div class="modal-head">
+                <h3><i class="fas fa-file-shield"></i> Analysis Report</h3>
+                <button onclick="closeReportModal()"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="report-icon-large"><i class="fas fa-file-pdf"></i></div>
+                <h4>Report Ready</h4>
+                <p>Download complete forensic analysis with all metrics.</p>
+                <div class="modal-btns">
+                    <button class="btn-primary" onclick="downloadReport()">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn-secondary" onclick="closeReportModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
