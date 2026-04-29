@@ -1,0 +1,1 @@
+# Models can be defined here if needed for Pydantic or ORM

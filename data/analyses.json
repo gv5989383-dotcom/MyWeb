@@ -1,0 +1,224 @@
+{
+    "analyses": [
+        {
+            "id": "c314c1b9-eaad-4a25-b095-ddf452c1522f",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "e3c6f83e_aapnvogymq_3.png",
+            "result": "Real",
+            "confidence": 83.65790291883397,
+            "timestamp": "2026-04-27 18:47:00",
+            "file_path": "static/upload/e3c6f83e_aapnvogymq_3.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "3e0df4b5-f275-4e0e-aff5-3d318a9a6cd6",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "1decf3fa_aagfhgtpmv_3.png",
+            "result": "Fake",
+            "confidence": 84.82592525570898,
+            "timestamp": "2026-04-27 18:47:37",
+            "file_path": "static/upload/1decf3fa_aagfhgtpmv_3.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "231b0964-f5bf-4f71-afdf-178619905953",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "8be0b059_aagfhgtpmv_3.png",
+            "result": "Real",
+            "confidence": 89.58340934435273,
+            "timestamp": "2026-04-27 18:47:48",
+            "file_path": "static/upload/8be0b059_aagfhgtpmv_3.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "0b0051da-0086-43e7-97f9-ddc3f5779a20",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "a3026713_aagfhgtpmv_3.png",
+            "result": "Fake",
+            "confidence": 90.1195399375765,
+            "timestamp": "2026-04-27 18:47:57",
+            "file_path": "static/upload/a3026713_aagfhgtpmv_3.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "b3ea0829-675c-4327-8c47-ca2b464e856c",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "6d5b9fe1_abqwwspghj_1.png",
+            "result": "Real",
+            "confidence": 91.42358868792806,
+            "timestamp": "2026-04-27 18:48:14",
+            "file_path": "static/upload/6d5b9fe1_abqwwspghj_1.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "f48ec043-2f1e-44fc-a4e1-72da257d7c1a",
+            "user_id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "type": "image",
+            "filename": "d0418cac_abqwwspghj_1.png",
+            "result": "Fake",
+            "confidence": 91.51369197852512,
+            "timestamp": "2026-04-27 18:48:20",
+            "file_path": "static/upload/d0418cac_abqwwspghj_1.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "db7c25bb-ae40-42a5-a5d0-7c1f42ecf56c",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "3ac68979_abarnvbtwb_1.png",
+            "result": "Real",
+            "confidence": 80.36854308342693,
+            "timestamp": "2026-04-29 18:12:24",
+            "file_path": "static/upload/3ac68979_abarnvbtwb_1.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "b7d42a11-b8b6-417f-8267-5dc039ee80e6",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "896c2b4f_aagfhgtpmv_1.png",
+            "result": "Real",
+            "confidence": 81.73264953028433,
+            "timestamp": "2026-04-29 18:12:48",
+            "file_path": "static/upload/896c2b4f_aagfhgtpmv_1.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "5eaba793-d2ea-455a-bae1-ebbfb827561b",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "2ac74b3b_aagfhgtpmv_8.png",
+            "result": "Real",
+            "confidence": 82.81151640912064,
+            "timestamp": "2026-04-29 18:13:02",
+            "file_path": "static/upload/2ac74b3b_aagfhgtpmv_8.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "361170d6-0d1d-44fd-90a5-6c25c7a5c007",
+            "user_id": "4687fc01-bb17-4442-9959-20eb531f0a39",
+            "type": "image",
+            "filename": "96bbb9b4_Screenshot 2025-12-17 152732.png",
+            "result": "Fake",
+            "confidence": 82.77899192774662,
+            "timestamp": "2026-04-29 18:16:29",
+            "file_path": "static/upload/96bbb9b4_Screenshot 2025-12-17 152732.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "9fe47352-bacf-4975-8b8d-032db68d2a81",
+            "user_id": "4687fc01-bb17-4442-9959-20eb531f0a39",
+            "type": "image",
+            "filename": "def9810b_Screenshot 2025-12-17 152732.png",
+            "result": "Fake",
+            "confidence": 88.95975208899557,
+            "timestamp": "2026-04-29 18:16:52",
+            "file_path": "static/upload/def9810b_Screenshot 2025-12-17 152732.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "b823d0e8-da42-4583-8de8-1534f6cc78ac",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "e0b02b4a_aagfhgtpmv_0.png",
+            "result": "Fake",
+            "confidence": 95.1578614048389,
+            "timestamp": "2026-04-29 18:34:28",
+            "file_path": "static/upload/e0b02b4a_aagfhgtpmv_0.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "5508a500-ec7e-45e3-8a58-85960016df8c",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "ecaf304f_agrmhtjdlk_6.png",
+            "result": "Fake",
+            "confidence": 91.57943496652679,
+            "timestamp": "2026-04-29 18:35:35",
+            "file_path": "static/upload/ecaf304f_agrmhtjdlk_6.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "4dad0b7e-f1a3-46e1-8870-94ccac2751e5",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "977833a2_Screenshot 2025-12-17 152732.png",
+            "result": "Real",
+            "confidence": 98.13638661767385,
+            "timestamp": "2026-04-29 18:35:52",
+            "file_path": "static/upload/977833a2_Screenshot 2025-12-17 152732.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "c594b4d0-5dde-4648-befc-1b6c0ba387c7",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "d79a90d9_WhatsApp Image 2026-04-29 at 6.36.59 PM.jpeg",
+            "result": "Real",
+            "confidence": 95.81032053505254,
+            "timestamp": "2026-04-29 18:37:12",
+            "file_path": "static/upload/d79a90d9_WhatsApp Image 2026-04-29 at 6.36.59 PM.jpeg",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "8e807473-7571-406f-ad50-abd6743fbfca",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "6aec65f3_aagfhgtpmv_6.png",
+            "result": "Fake",
+            "confidence": 88.19248800209145,
+            "timestamp": "2026-04-29 18:37:38",
+            "file_path": "static/upload/6aec65f3_aagfhgtpmv_6.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "22ffeaee-b72e-436e-ba6f-79b070d0d7df",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "513350e1_aagfhgtpmv_7.png",
+            "result": "Fake",
+            "confidence": 92.99565724638227,
+            "timestamp": "2026-04-29 18:37:51",
+            "file_path": "static/upload/513350e1_aagfhgtpmv_7.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "1270589b-a5f0-44af-bcff-808637c31c09",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "e2fadd1d_ajqslcypsw_0.png",
+            "result": "Fake",
+            "confidence": 86.88882353809181,
+            "timestamp": "2026-04-29 18:38:12",
+            "file_path": "static/upload/e2fadd1d_ajqslcypsw_0.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "a080bf76-2a7f-4e8c-b19e-e899102a6199",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "215c2450_ajqslcypsw_0.png",
+            "result": "Fake",
+            "confidence": 90.06649097425287,
+            "timestamp": "2026-04-29 18:38:20",
+            "file_path": "static/upload/215c2450_ajqslcypsw_0.png",
+            "chart_path": "static/Out/chart.png"
+        },
+        {
+            "id": "b0b2e6f4-698c-432d-9c23-f927061fb340",
+            "user_id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "type": "image",
+            "filename": "afc82bd1_WhatsApp Image 2026-04-29 at 6.36.59 PM.jpeg",
+            "result": "Real",
+            "confidence": 95.40884508618353,
+            "timestamp": "2026-04-29 18:38:36",
+            "file_path": "static/upload/afc82bd1_WhatsApp Image 2026-04-29 at 6.36.59 PM.jpeg",
+            "chart_path": "static/Out/chart.png"
+        }
+    ]
+}

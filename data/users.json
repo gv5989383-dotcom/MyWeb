@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "id": "dcacf3ac-3190-40ee-87ff-736c66300ff3",
+            "name": "vinoth G",
+            "email": "chellakutty7177@gmail.com",
+            "phone": "",
+            "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+            "created_at": "2026-04-27 18:46:39",
+            "analyses": []
+        },
+        {
+            "id": "test-user-id",
+            "name": "Admin User",
+            "email": "admin@example.com",
+            "phone": "1234567890",
+            "password_hash": "ef92b778ba7158395a4b7676b743657f6cf01b9790616b23b4938a9d18e31f0f",
+            "created_at": "2026-04-29 12:00:00",
+            "analyses": []
+        },
+        {
+            "id": "68fedc79-385c-4a8a-8092-af5767fd228a",
+            "name": "123",
+            "email": "vin@gmail.com",
+            "phone": "",
+            "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+            "created_at": "2026-04-29 18:12:07",
+            "analyses": []
+        },
+        {
+            "id": "4687fc01-bb17-4442-9959-20eb531f0a39",
+            "name": "vinoth G",
+            "email": "gsdf@gmail.com",
+            "phone": "",
+            "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+            "created_at": "2026-04-29 18:16:24",
+            "analyses": []
+        }
+    ]
+}
